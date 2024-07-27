@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Saleh Ahmed</title>
+	<link rel="icon" href="title logo.png" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+		.center-all{
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.canvas-image{
+			width: 500px;
+			z-index: 1;
+
+			position: relative;
+		}
+		
+		.relative-pos{
+			display: inline-block; 
+			position: relative;
+			z-index: 5;
+		}
+
+		.canvas-container {
+			width: 100vw;
+			height: 100vh;
+			display: none;
+			/* Hide the Three.js containers initially */
+			pointer-events: none;
+		}
+
+
+		.placeholder {
+			width: 50%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			pointer-events: all !important;
+		}
+
+		#placeholder1 {
+			background-image: url('/Saleh-Ahmed-Portfolio/untitled.png');
+			/* Your placeholder image */
+			z-index: 1;
+			/* Make sure it's above the Three.js containers */
+			pointer-events: all !important;
+			top: 12% !important;
+			left: 25% !important;
+		}
+
+		#placeholder2 {
+			background-image: url('/Saleh-Ahmed-Portfolio/Cannon.png');
+			/* Your placeholder image */
+			z-index: 0;
+			/* Make sure it's above the Three.js containers */
+			pointer-events: all !important;
+			top: 100% !important;
+			left: 25% !important;
+		}
+
+		#placeholder3 {
+			background-image: url('/Saleh-Ahmed-Portfolio/Speaker.png');
+			/* Your placeholder image */
+			z-index: 0;
+			/* Make sure it's above the Three.js containers */
+			pointer-events: all !important;
+			top: 200% !important;
+			left: 25% !important;
+			cursor: default !important;
+		}
+
+		.firsttext {
+			font-size: 5rem;
+			color: white;
+		}
+
+		.normaltext {
+			font-size: 2rem;
+			color: white;
+		}
+
+		.rel {
+			position: relative;
+			width: 100vw;
+			height: 100vh;
+			z-index: 2;
+			pointer-events: none;
+		}
+
+		.abs {
+			position: absolute;
+			width: 100%;
+			height: fit-content;
+			z-index: 2;
+			pointer-events: none;
+		}
+
+		.me {
+			width: 100vw;
+			height: 100vh;
+		}
+	</style>
+  <script type="module" crossorigin src="/Saleh-Ahmed-Portfolio/assets/index-CDZVVNHP.js"></script>
+  <link rel="stylesheet" crossorigin href="/Saleh-Ahmed-Portfolio/assets/index-14xWqfXx.css">
+</head>
+
+<body class="example">
+	<div id="loading-screen-delay" class="loading-screen-delay">
+		<div class="loader"></div>
+		<div class="text-white mt-[1%] inter-light opacity-100">Please Wait, The <span
+				class="just-another-hand-regular text-3xl">Website</span> is Loading...</div>
+		<div class="text-white mt-[-0.5%] text-[75%] inter-light opacity-75">(Note: When reviewing <span
+				class="just-another-hand-regular text-xl">Models</span> please go in <span
+				class="just-another-hand-regular text-xl">Order</span>, there is a <span
+				class="just-another-hand-regular text-xl">bug</span> if you do Otherwise)</div>
+				<div class="text-white  text-[75%] inter-light opacity-75">(Note: <span class="just-another-hand-regular text-3xl">Click Anywhere!</span>)</div>
+	</div>
+
+	<div id="loading-screen" class="loading-screen portrait">
+		<div class="loader"></div>
+		<div class="text-white mt-[1%] just-another-hand-regular md:text-4xl sm:text-2xl">Loading...</div>
+		<div class="text-white mt-[0.01%] inter-light opacity-75">(Note: <span
+				class="just-another-hand-regular text-2xl opacity-75">WebGl</span> isn't capable of getting good renders
+			without <span class="just-another-hand-regular text-2xl opacity-75">crashing</span> weaker Android Phones
+			and PCs, So Quality is reduced.)</div>
+	</div>
+
+	<div id="portrait-message">
+		Please rotate your device to landscape mode.
+	</div>
+	<div class="flex justify-between items-center md:mt-[2%] portrait" id="content" style="box-sizing: border-box;">
+		<p class="just-another-hand-regular black text-white md:ml-[3%] md:text-5xl text-6xl content" id="topOfPage">
+			Saleh Ahmed</p>
+
+		<div class="flex w-[15%] justify-center content">
+			<p class="inter-bold black text-white md:mr-[8%] mr-[12%] content">
+				<a href="index.html">About me</a>
+			</p>
+			<div class="relative inline-block text-left">
+				<div>
+					<button type="button"
+						class="inline-flex justify-center w-full text-white inter-light hover:opacity-100 transition-all"
+						id="menu-button" aria-expanded="true" aria-haspopup="true">
+						Works
+					</button>
+				</div>
+
+				<!-- Dropdown menu -->
+				<div class="origin-top-right absolute right-0 mt-2 w-[100%] rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
+					role="menu" aria-orientation="vertical" aria-labelledby="menu-button" id="menu">
+					<div class="py-1 flex justify-center" role="none">
+						<a href="https://www.artstation.com/saleh_ahmed/albums/6501882" class="text-white px-4 py-2 text-sm hover:text-red-600 transition-all" role="menuitem">Artstation</a>
+						<a href="https://github.com/SADuck" class="text-white px-4 py-2 text-sm hover:text-blue-600 transition-all" role="menuitem">Github</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button
+			class="md:h-[100%] md:py-[0.3%] md:w-[10%] md:mr-[3%] sm:w-[20%] portrait bg-white rounded lg:text-[99%] md:text-[95%] inter-normal sm:px-[0.2%] sm:py-[0.2%] hover:bg-black hover:text-white transition-all content"
+			id="get-in-touch-button">Get
+			In Touch</button>
+	</div>
+	<!--Placeholders and 3D Elements-->
+	<div class="" id="content">
+		<div class="">
+			<div class="center-all mt-[2%]">
+				<h1 class="inter-light opacity-100 firsttext content ">Hi, I'm <span
+					class="just-another-hand-regular text-[200%] content">Saleh!</span></h1>
+				<div id="canvas-container1" class="canvas-container content"></div>
+				<img id="img_1" class="canvas-image music-hover" src="/Saleh-Ahmed-Portfolio/untitled.png" alt="" style="position: relative;">
+				<div class="relative-pos" style="top: -30px; z-index: 5;">
+					<h1 class="inter-light opacity-100 normaltext content md:text-[150%] text-[100%]">I Create 3D <span
+						class="just-another-hand-regular text-[175%] content">Models</span> and Design <span
+						class="just-another-hand-regular text-[175%]">Websites!</span></h1>
+					<h1 class="inter-light normaltext content text-[85%]">(Note: Click on the picture to preview the
+						live 3D model.)</h1>
+				</div>
+			</div>
+		</div>
+		<div class="">
+			<div class="center-all">
+				<div id="canvas-container2" class="canvas-container"></div>
+				<img id="img_2" class="canvas-image music-hover" src="/Saleh-Ahmed-Portfolio/Cannon.png" alt="" style="width: 700px;">
+				<h1 class="relative-pos inter-light opacity-100 normaltext content md:text-[150%] text-[100%]" style="top: -130px;" id="IDesign">I
+					Design With <span class="just-another-hand-regular text-[175%] content">Passion!</span></h1>
+			</div>
+		</div>
+		<div>
+		</div>
+		<div class="">
+			<div class="center-all">
+				<img id="img_3" class="canvas-image music-hover" src="/Saleh-Ahmed-Portfolio/Speaker.png" alt="" style="width: 680px;">
+				<h1 class="relative-pos inter-light opacity-100 normaltext content md:text-[150%] text-[100%]" id="IStylize" style="top: -30px;">I
+					Also... <span class="just-another-hand-regular text-[175%] content">Stylize!</span></h1>
+			</div>
+		</div>
+	</div>
+
+	<!--Contact and about me section-->
+	<div class=" mt-[200px] flex enlarge-div flex-col portrait" id="content">
+		<div class="flex width gap-[200px] justify-center">
+			<div class="background-1 mt-[5%] relative ">
+				<img src="1-removebg-preview-tint.png" alt="" class="w-[50%] mb-[50%] absolute imgPos">
+			</div>
+			<div class="flex flex-col justify-center">
+				<h1 class="inter-normal opacity-100 text-white md:text-[500%] sm:text-[300%]">Who <span
+						class="just-another-hand-regular text-[135%]">Am</span> I?</h1>
+				<h1 class="just-another-hand-regular text-[250%] text-center text-white opacity-50">A creative mind,
+					with a big goal</h1>
+			</div>
+		</div>
+		<div class="flex width justify-center mt-[8%]">
+			<div class="flex flex-col">
+				<h1 class="text-white inter-light text-[200%] opacity-75" id="contacts">Contacts</h1>
+				<div class="background-2 mb-[28%] relative" id="contactme">
+					<h1 class="text-white inter-light opacity-100 mt-4 ml-2">saleh215ahmed2005@gmail.com</h1>
+					<h1 class="text-white inter-light opacity-100 mt-4 ml-2 mb-4">+201028052863</h1>
+					<a class="text-white inter-light opacity-100 ml-2"
+						href="https://www.artstation.com/saleh_ahmed">Artstation - Saleh Ahmed</a>
+					<img src="Mail.svg" alt="" class="absolute top-[9%] left-[-10%]">
+					<img src="whatsapp.svg" alt="" class="absolute top-[35%] left-[-10%]">
+					<img src="Artstation.svg" alt="" class="absolute top-[65%] left-[-10%]">
+				</div>
+				<h1 class="text-white inter-light text-[200%] opacity-75">Languages</h1>
+				<div class="background-3 relative">
+					<img src="BarAr.png" alt="" class="mt-[5%] ml-[2%] w-[95%]">
+					<h1 class="text-white inter-light ml-[2%] text-[115%]">My native language, but no one is perfect.
+					</h1>
+
+					<img src="BarENG.png" alt="" class="mt-[5%] ml-[2%] w-[95%]">
+					<h1 class="text-white inter-light ml-[2%] text-[110%]">My second language, and I am fluent in it.
+					</h1>
+
+					<h1 class="inter-light opacity-100 text-[170%] text-white absolute top-[0%] left-[-8%]">ar</h1>
+					<h1 class="inter-light opacity-100 text-[170%] text-white absolute top-[60%] left-[-14%]">eng</h1>
+				</div>
+			</div>
+			<div class="flex flex-col ml-[3%]">
+				<h1 class="text-white inter-light text-[200%] opacity-75">Education / Experience</h1>
+				<div class="background-4 rounded-r-3xl relative">
+					<img src="bolt.svg" alt="" class="mt-[7%] ml-[7%] w-[4%]">
+					<h1 class="absolute top-[8%] left-[14%] text-white inter-light opacity-100">2021 - 2024</h1>
+					<h1 class="absolute top-[7%] left-[34%] text-white inter-light opacity-100 text-[110%]">We School
+						For Applied Technology</h1>
+					<h1 class="absolute top-[14%] left-[14%] text-white inter-light opacity-100 text-[90%]">I studied
+						Web Development & Programming for 3 Years at this school.</h1>
+
+					<img src="bolt.svg" alt="" class="mt-[20%] ml-[7%] w-[4%]">
+					<h1 class="absolute top-[37%] left-[14%] text-white inter-light opacity-100">2022 - 2024</h1>
+					<h1 class="absolute top-[36%] left-[34%] text-white inter-light opacity-100 text-[110%]">Freelancing
+					</h1>
+					<h1 class="absolute top-[45%] left-[14%] text-white inter-light opacity-100 text-[90%]">As a self
+						studying 3D artist and a Web Developer, I started freelancing since my second year in School.
+					</h1>
+
+					<img src="bolt.svg" alt="" class="mt-[20%] ml-[7%] w-[4%]">
+					<h1 class="absolute top-[66%] left-[14%] text-white inter-light opacity-100">2024 - 2028</h1>
+					<h1 class="absolute top-[65%] left-[34%] text-white inter-light opacity-100 text-[110%]">College
+					</h1>
+					<h1 class="absolute top-[73%] left-[14%] text-white inter-light opacity-100 text-[90%]">Currently, I
+						still didn’t enroll in Any Colleges, Still waiting to apply for a College And I plan on finding
+						a Job Alongside College.</h1>
+				</div>
+			</div>
+		</div>
+		<h1 class="text-white text-center mt-[10%] just-another-hand-regular text-[700%]">Technical Skills</h1>
+		<!--Technical Skills Section-->
+		<div class="background-5 mt-[1%] mb-[7%] flex justify-center flex-col items-center">
+			<img src="Technical.png" alt="" class="w-[50%] h-auto">
+			<button
+				class="bg-white rounded hover:bg-black hover:text-white transition-all content w-[8%] sm:w-[10%] px-[0.2%] py-[0.25%] inter-normal"
+				id="backToTop">Back
+				To Top</button>
+		</div>
+	</div>
+</body>
+
+</html>
